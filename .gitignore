@@ -162,3 +162,5 @@ cython_debug/
 # env files
 .env.prod
 .env.prod.db
+
+.sqlite3
