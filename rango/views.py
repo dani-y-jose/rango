@@ -16,6 +16,9 @@ def index(request):
     # Place the list in our context_dict dictionary (with our boldmessage!)
     # that will be passed to the template engine
     context_dict['categories'] = category_list
+    page_list = Page.objects.order_by('-views')[:5]
+    context_dict['pages'] = page_list
+    context_dict['extra'] = 'From the model solution on GitHub'
     # Render the response and send it back!
     return render(request, 'rango/index.html', context=context_dict)
 
